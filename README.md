@@ -132,6 +132,3 @@ This project uses many static asset paths from `public/` (for example images/mod
 - 3D performance on low-end devices:
   - reduce postprocessing intensity and scene complexity
 
-## License
-
-See [LICENSE](LICENSE).

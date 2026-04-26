@@ -170,7 +170,6 @@ const TechStack = () => {
   return (
     <div className="techstack">
       <h2> My Techstack</h2>
-      <p>JS · PostgreSQL · SvelteKit · Java · Python · Rust · Docker · Caddy</p>
 
       <Canvas
         shadows
