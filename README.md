@@ -1,15 +1,37 @@
 # Kumar Portfolio
 
-Modern 3D developer portfolio built with React, TypeScript, Vite, Three.js, and GSAP.
+This repository contains the source code for a modern personal 3D portfolio built with React, TypeScript, Vite, Three.js, React Three Fiber, and GSAP.
 
-This project is designed as a single-page interactive portfolio with:
+It includes animated sections, an interactive character/3D experience, custom cursor effects, and a project showcase that is easy to customize.
 
-- animated hero and section transitions
-- 3D visuals and physics-based interactions
-- project carousel and skills showcase
-- clean component structure for easy profile customization
+## Live Website
+
+- GitHub Pages: [https://kv8936.github.io/kumarviswajeet-portfolio/](https://kv8936.github.io/kumarviswajeet-portfolio/)
+
 
 ![Portfolio Preview](public/images/preview1.png)
+
+## Table of Contents
+
+- [Features](#features)
+- [What this project includes](#what-this-project-includes)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Customization Guide](#customization-guide)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
+- [GSAP License Note](#gsap-license-note)
+- [License](#license)
+
+## Features
+
+- Responsive one-page portfolio layout with reusable section components.
+- 3D character scene powered by Three.js and React Three Fiber.
+- GSAP-powered transitions and scroll effects.
+- Interactive cursor, hover states, and motion-driven UI details.
+- Organized component architecture for quick content updates.
 
 ## What this project includes
 
@@ -23,13 +45,13 @@ This project is designed as a single-page interactive portfolio with:
 ### 2) Technical Showcase
 
 - 3D tech stack visualization ([src/components/TechStack.tsx](src/components/TechStack.tsx))
-- “What I Do” cards ([src/components/WhatIDo.tsx](src/components/WhatIDo.tsx))
+- What I Do cards ([src/components/WhatIDo.tsx](src/components/WhatIDo.tsx))
 - Project carousel ([src/components/Work.tsx](src/components/Work.tsx))
 
 ### 3) 3D Character Scene
 
-- Character/scene setup and utilities under [src/components/Character](src/components/Character)
-- Environment assets under [public/models](public/models)
+- Character/scene setup and utilities in [src/components/Character](src/components/Character)
+- Environment/model assets in [public/models](public/models)
 
 ## Tech Stack
 
@@ -39,96 +61,135 @@ This project is designed as a single-page interactive portfolio with:
 - TypeScript
 - Vite
 
-### 3D / Animation
+### Animation and 3D
 
+- GSAP + @gsap/react
 - Three.js
 - @react-three/fiber
 - @react-three/drei
-- @react-three/rapier
 - @react-three/postprocessing
-- GSAP + @gsap/react
+- @react-three/cannon
+- @react-three/rapier
 
-### UI / Utilities
+### Supporting Libraries
 
 - react-icons
 - react-fast-marquee
+- @vercel/analytics
 
-## Project Structure (high-level)
+## Project Structure
 
 ```text
 .
-├── public/
-│   ├── images/          # Static images (projects, logos, preview)
-│   ├── models/          # 3D assets
-│   └── draco/           # Decoder files
+├── public/                    # Static assets (images, models, draco, resume)
 ├── src/
+│   ├── assets/                # Local media/assets
 │   ├── components/
-│   │   ├── Character/
-│   │   ├── styles/
-│   │   └── *.tsx        # Main sections
-│   ├── context/
-│   ├── data/
+│   │   ├── Character/         # 3D scene + character logic/utilities
+│   │   ├── styles/            # Section/component CSS files
+│   │   └── *.tsx              # Main sections
+│   ├── context/               # Global providers
+│   ├── data/                  # Static content/data files
 │   ├── App.tsx
 │   └── main.tsx
 ├── package.json
 └── vite.config.ts
 ```
 
-## Run locally
+## Getting Started
 
 ### Prerequisites
 
-- Bun (recommended) or Node.js + npm
+- Bun (recommended), or Node.js 18+ with npm
 
-### Install
+### Installation
 
 ```bash
 bun install
 ```
 
-### Start dev server
+### Run development server
 
 ```bash
 bun run dev
 ```
 
-### Build production bundle
+### Build for production
 
 ```bash
 bun run build
 ```
 
-### Preview build
+### Preview production build
 
 ```bash
 bun run preview
 ```
 
-## How to customize quickly
+## Available Scripts
 
-Update these files first:
+- `bun run dev` — Starts Vite dev server.
+- `bun run build` — Type-checks and builds production bundle.
+- `bun run preview` — Serves the production build locally.
+- `bun run lint` — Runs ESLint checks.
+
+## Customization Guide
+
+For quick personalization, update these files first:
 
 - Name/role headline: [src/components/Landing.tsx](src/components/Landing.tsx)
-- About bio: [src/components/About.tsx](src/components/About.tsx)
+- About section: [src/components/About.tsx](src/components/About.tsx)
 - Career timeline: [src/components/Career.tsx](src/components/Career.tsx)
-- Education + links: [src/components/Contact.tsx](src/components/Contact.tsx)
-- Social icons + resume URL: [src/components/SocialIcons.tsx](src/components/SocialIcons.tsx)
-- Projects list/cards: [src/components/Work.tsx](src/components/Work.tsx)
-- Skills and logos: [src/components/TechStack.tsx](src/components/TechStack.tsx)
+- Education + contact links: [src/components/Contact.tsx](src/components/Contact.tsx)
+- Social icons + resume path: [src/components/SocialIcons.tsx](src/components/SocialIcons.tsx)
+- Projects: [src/components/Work.tsx](src/components/Work.tsx)
+- Skills + logos: [src/components/TechStack.tsx](src/components/TechStack.tsx)
 
-## Deployment notes (important)
+## Deployment
 
-This project uses many static asset paths from `public/` (for example images/models).
+This project can be deployed to GitHub Pages, Netlify, Vercel, and similar hosts.
 
-- If hosting at root domain (like `username.github.io`), setup is usually direct.
-- If hosting under a subpath (like `username.github.io/repo-name`), configure Vite `base` in [vite.config.ts](vite.config.ts) and ensure asset paths are subpath-safe.
+### General deployment flow
+
+1. Build:
+
+   ```bash
+   bun run build
+   ```
+
+2. Verify:
+
+   ```bash
+   bun run preview
+   ```
+
+3. Deploy `dist/` (or use CI workflow).
+
+### GitHub Pages note
+
+If deploying under a subpath like `username.github.io/repo-name`, make sure [vite.config.ts](vite.config.ts) has the correct `base` and asset paths are subpath-safe.
 
 ## Troubleshooting
 
-- Build/type issues:
-  - run `bun run build` and fix reported TypeScript errors
+- Blank page after deploy:
+  - Check `base` path in [vite.config.ts](vite.config.ts).
+- Type/build issues:
+  - Run `bun run build` and resolve reported errors.
 - Missing image/model:
-  - verify file exists in `public/` and path is correct
-- 3D performance on low-end devices:
-  - reduce postprocessing intensity and scene complexity
+  - Verify file exists under `public/` and path is correct.
+- Slow 3D performance:
+  - Reduce postprocessing/scene complexity in 3D components.
+
+## GSAP License Note
+
+This project uses the standard `gsap` package.
+
+- Install dependencies normally with Bun or npm.
+- If migrating from older setups, remove `gsap-trial` if present.
+
+Reference: [GSAP Installation Docs](https://gsap.com/docs/v3/Installation/)
+
+## License
+
+This project is available under the [MIT License](LICENSE).
 

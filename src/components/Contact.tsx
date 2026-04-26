@@ -26,7 +26,7 @@ const Contact = () => {
             </p>
             <p>
               Master&apos;s in Data Analyst, Berlin School of Business and
-              Innovation — 2022–2023 (GPA: 1.7)
+              Innovation — 2022–2023 
             </p>
             <p>
               B.Tech Arya Institute of Engineering
