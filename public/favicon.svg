@@ -1,16 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KV Favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="AI Chip Favicon">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0ea5e9"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
-    </linearGradient>
-    <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#dbeafe"/>
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#d1d5db"/>
     </linearGradient>
   </defs>
 
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bg)"/>
-  <path d="M18 18v28h6v-9l7 9h8l-10-13 9-15h-7l-7 12V18z" fill="url(#fg)"/>
-  <path d="M42 18h7l5 10 5-10h5l-9 17v11h-6V35z" fill="url(#fg)" transform="translate(-6 0)"/>
+  <rect x="2" y="2" width="124" height="124" rx="22" fill="url(#bg)"/>
+
+  <g stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="34" y="34" width="60" height="60" rx="8" fill="none"/>
+
+    <line x1="34" y1="45" x2="18" y2="45"/>
+    <line x1="34" y1="64" x2="18" y2="64"/>
+    <line x1="34" y1="83" x2="18" y2="83"/>
+
+    <line x1="94" y1="45" x2="110" y2="45"/>
+    <line x1="94" y1="64" x2="110" y2="64"/>
+    <line x1="94" y1="83" x2="110" y2="83"/>
+
+    <line x1="45" y1="34" x2="45" y2="18"/>
+    <line x1="64" y1="34" x2="64" y2="18"/>
+    <line x1="83" y1="34" x2="83" y2="18"/>
+
+    <line x1="45" y1="94" x2="45" y2="110"/>
+    <line x1="64" y1="94" x2="64" y2="110"/>
+    <line x1="83" y1="94" x2="83" y2="110"/>
+
+    <circle cx="14" cy="45" r="4"/>
+    <circle cx="14" cy="64" r="4"/>
+    <circle cx="14" cy="83" r="4"/>
+    <circle cx="114" cy="45" r="4"/>
+    <circle cx="114" cy="64" r="4"/>
+    <circle cx="114" cy="83" r="4"/>
+    <circle cx="45" cy="14" r="4"/>
+    <circle cx="64" cy="14" r="4"/>
+    <circle cx="83" cy="14" r="4"/>
+    <circle cx="45" cy="114" r="4"/>
+    <circle cx="64" cy="114" r="4"/>
+    <circle cx="83" cy="114" r="4"/>
+  </g>
+
+  <text x="64" y="74" text-anchor="middle" font-size="28" font-family="Inter, Arial, sans-serif" fill="#111111">AI</text>
 </svg>
